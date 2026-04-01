@@ -25,9 +25,8 @@ dependencies {
     // Javalin 7 — embedded HTTP server (shaded)
     implementation("io.javalin:javalin:6.3.0")
 
-    // SLF4J Simple — for Javalin/Jetty logging (shaded)
-    implementation("org.slf4j:slf4j-simple:2.0.16")
-    implementation("org.slf4j:slf4j-api:2.0.16")
+    // SLF4J — provided by Velocity, must NOT be shaded
+    compileOnly("org.slf4j:slf4j-api:2.0.16")
 
     // Jackson — REST API JSON (shaded)
     implementation("com.fasterxml.jackson.core:jackson-databind:2.18.2")
@@ -60,9 +59,7 @@ tasks.shadowJar {
     relocate("org.sqlite", "space.blockway.social.shadow.sqlite")
     relocate("org.xerial", "space.blockway.social.shadow.xerial")
     relocate("com.mysql", "space.blockway.social.shadow.mysql")
-    relocate("org.slf4j", "space.blockway.social.shadow.slf4j")
-    relocate("ch.qos.logback", "space.blockway.social.shadow.logback")
-    relocate("org.yaml.snakeyaml", "space.blockway.social.shadow.snakeyaml")
+relocate("org.yaml.snakeyaml", "space.blockway.social.shadow.snakeyaml")
 
     mergeServiceFiles()
 }
