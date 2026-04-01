@@ -59,7 +59,11 @@ tasks.shadowJar {
     relocate("org.sqlite", "space.blockway.social.shadow.sqlite")
     relocate("org.xerial", "space.blockway.social.shadow.xerial")
     relocate("com.mysql", "space.blockway.social.shadow.mysql")
-relocate("org.yaml.snakeyaml", "space.blockway.social.shadow.snakeyaml")
+    relocate("org.yaml.snakeyaml", "space.blockway.social.shadow.snakeyaml")
+
+    // Exclude SLF4J from the fat JAR — Velocity provides it at runtime
+    exclude("org/slf4j/**")
+    exclude("META-INF/services/org.slf4j.*")
 
     mergeServiceFiles()
 }
