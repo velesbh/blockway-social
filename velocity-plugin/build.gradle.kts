@@ -56,8 +56,8 @@ tasks.shadowJar {
     relocate("jakarta", "space.blockway.social.shadow.jakarta")
     relocate("com.fasterxml.jackson", "space.blockway.social.shadow.jackson")
     relocate("com.zaxxer.hikari", "space.blockway.social.shadow.hikari")
-    relocate("org.sqlite", "space.blockway.social.shadow.sqlite")
-    relocate("org.xerial", "space.blockway.social.shadow.xerial")
+    // SQLite JDBC uses Class.forName("org.sqlite.core.NativeDB") internally to load its
+    // native library — relocating the package breaks that hardcoded string. Don't relocate.
     relocate("com.mysql", "space.blockway.social.shadow.mysql")
     relocate("org.yaml.snakeyaml", "space.blockway.social.shadow.snakeyaml")
 
