@@ -43,10 +43,17 @@ public class DatabaseManager {
             hikari.addDataSourceProperty("journal_mode", "WAL");
             hikari.addDataSourceProperty("foreign_keys", "true");
         } else {
+            // Force-load the driver so DriverManager can find it after shading.
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException("MySQL driver not found on classpath", e);
+            }
             String url = String.format(
                     "jdbc:mysql://%s:%d/%s?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&allowPublicKeyRetrieval=true",
                     config.getMysqlHost(), config.getMysqlPort(), config.getMysqlDatabase()
             );
+            hikari.setDriverClassName("com.mysql.cj.jdbc.Driver");
             hikari.setJdbcUrl(url);
             hikari.setUsername(config.getMysqlUsername());
             hikari.setPassword(config.getMysqlPassword());
