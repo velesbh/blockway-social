@@ -1,0 +1,55 @@
+name: BlockwaySocial
+version: 1.0.0
+main: space.blockway.social.paper.BlockwaySocialPaper
+api-version: '1.21'
+description: "Blockway Social — Friends, Parties, Cross-Server Chat, and Account Linking"
+authors:
+  - Enzonic
+website: https://blockway.space
+
+commands:
+  friend:
+    description: "Manage your friends list"
+    usage: "/<command> <add|remove|list|accept|deny|join>"
+    permission: blockwaysocial.friend
+    aliases: [f]
+  party:
+    description: "Manage your party"
+    usage: "/<command> <create|invite|join|leave|kick|disband|list|warp>"
+    permission: blockwaysocial.party
+    aliases: [p]
+  fc:
+    description: "Send a message to all online friends"
+    usage: "/<command> <message>"
+    permission: blockwaysocial.friendchat
+    aliases: [friendchat]
+  pc:
+    description: "Send a message to your party"
+    usage: "/<command> <message>"
+    permission: blockwaysocial.partychat
+    aliases: [partychat]
+  link:
+    description: "Generate a web account link code"
+    usage: "/<command>"
+    permission: blockwaysocial.link
+  unlink:
+    description: "Remove your web account link"
+    usage: "/<command>"
+    permission: blockwaysocial.link
+
+permissions:
+  blockwaysocial.friend:
+    description: "Use friend commands"
+    default: true
+  blockwaysocial.party:
+    description: "Use party commands"
+    default: true
+  blockwaysocial.friendchat:
+    description: "Use /fc friend chat"
+    default: true
+  blockwaysocial.partychat:
+    description: "Use /pc party chat"
+    default: true
+  blockwaysocial.link:
+    description: "Use /link and /unlink"
+    default: true

@@ -1,0 +1,54 @@
+# Blockway Social — Paper Plugin Configuration
+# Enzonic LLC | blockway.space
+
+messages:
+  prefix: "<gradient:#00c3ff:#0080ff>[Blockway]</gradient> "
+
+  # Friends
+  friend-request-sent: "<green>Friend request sent to <yellow>{player}</yellow>."
+  friend-request-received: "<aqua>{player}</aqua> <green>sent you a friend request. Use <yellow>/friend accept {player}</yellow> to accept."
+  friend-added: "<aqua>{player}</aqua> <green>is now your friend!"
+  friend-removed: "<red>Removed <aqua>{player}</aqua> from your friends."
+  friend-online: "<aqua>{player}</aqua> <green>is now online</green> on <yellow>{server}</yellow>."
+  friend-offline: "<aqua>{player}</aqua> <gray>went offline."
+  friend-not-found: "<red>Player not found: <yellow>{player}</yellow>."
+  friend-already: "<red>You are already friends with <yellow>{player}</yellow>."
+  friend-request-pending: "<red>You already sent a request to <yellow>{player}</yellow>."
+  friend-no-request: "<red>No pending request from <yellow>{player}</yellow>."
+  not-friends: "<red>You are not friends with <yellow>{player}</yellow>."
+  cannot-add-self: "<red>You cannot add yourself as a friend."
+  max-friends: "<red>You have reached the maximum number of friends."
+  requests-disabled: "<red>{player} is not accepting friend requests."
+  friend-not-online: "<red>{player} is not online."
+  friend-server-restricted: "<red>{player}'s server is private."
+
+  # Friend chat
+  friend-chat-format: "<#00c3ff>[FC] <yellow>{player}</yellow>: <white>{message}"
+
+  # Party
+  party-created: "<green>Party created! Use <yellow>/party invite <player></yellow> to invite friends."
+  party-disbanded: "<red>The party has been disbanded."
+  party-kicked: "<red>You have been kicked from the party."
+  party-leader-transferred: "<gold>You are now the party leader."
+  party-not-in-party: "<red>You are not in a party."
+  party-already-in-party: "<red>You are already in a party."
+  party-not-leader: "<red>Only the party leader can do that."
+  party-full: "<red>The party is full."
+  party-player-not-found: "<red>Player not found: <yellow>{player}</yellow>."
+  party-invite-sent: "<green>Party invite sent to <yellow>{player}</yellow>."
+  party-invite-received: "<gold>{player}</gold> <green>invited you to their party. Use <yellow>/party join {player}</yellow> to accept."
+  party-member-joined: "<green>{player} joined the party."
+  party-member-left: "<yellow>{player} left the party."
+  party-chat-format: "<#9B59B6>[PC] <yellow>{player}</yellow>: <white>{message}"
+
+  # Link
+  link-code: "<green>Your link code is: <yellow><bold>{code}</bold></yellow>. Valid for <white>{minutes}</white> minutes. Enter it on <aqua>blockway.space</aqua>."
+  already-linked: "<red>Your account is already linked. Use <yellow>/unlink</yellow> to unlink first."
+  not-linked: "<red>Your account is not linked."
+  unlinked: "<green>Your web account has been unlinked successfully."
+
+gui:
+  friends-title: "<gradient:#00c3ff:#0080ff>Friends List</gradient>"
+  party-title: "<#9B59B6>Party Management"
+
+server-name: "server"

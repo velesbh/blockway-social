@@ -1,0 +1,53 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# Blockway Social — Velocity Plugin Configuration
+# Enzonic LLC | blockway.space
+# ──────────────────────────────────────────────────────────────────────────────
+
+database:
+  # "sqlite" for single-proxy setups (no external DB required)
+  # "mysql" for production multi-server networks
+  type: "sqlite"
+
+  # SQLite: path to the database file, relative to the plugin data directory
+  sqlite-path: "blockwaysocial.db"
+
+  # MySQL / MariaDB connection settings (only used when type = "mysql")
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "blockwaysocial"
+    username: "root"
+    password: ""
+    maximum-pool-size: 10
+    minimum-idle: 2
+    connection-timeout: 30000
+    max-lifetime: 1800000
+
+# ── REST API ──────────────────────────────────────────────────────────────────
+api:
+  # Enable or disable the embedded REST API server
+  enabled: true
+
+  # Port the API server listens on
+  port: 25580
+
+  # Bind address: "0.0.0.0" = all interfaces, "127.0.0.1" = loopback only (recommended for production)
+  bind: "0.0.0.0"
+
+  # Master key — used ONLY for the /api/v1/apikey/generate endpoint.
+  # Change this immediately after first deployment!
+  master-key: "CHANGE_ME_NOW_master_key"
+
+# ── Social settings ───────────────────────────────────────────────────────────
+social:
+  # How long (minutes) a /link code remains valid
+  link-code-expiry-minutes: 10
+
+  # Maximum number of friends a single player can have
+  max-friends: 200
+
+  # Maximum number of players in a single party (including leader)
+  max-party-size: 10
+
+  # How many past chat messages to keep per channel (friend or party)
+  chat-history-limit: 100
